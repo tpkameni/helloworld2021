@@ -5,6 +5,12 @@ pipeline {
  
  
  }
+ environment {
+ registry = "tpkameni/devop-code
+ registryCredential = 'DockeruserID' 
+ 
+ 
+ }
   stages {
     stage('Build' ) {
           steps {
@@ -27,20 +33,17 @@ pipeline {
           }
     stage('deploy' ) {
           steps {
-          echo " deploy steps"
-          sleep 10
+          
+           script {
+           docker.build registry + ":$BUILD_NUMBER"
+           
+           }
+          
           
           }
           
           }
-    stage("docker" ) {
-          steps {
-          echo " image steps"
-          sleep 10
-          
-          }
-          
-          }
+  
   }
 
 }
