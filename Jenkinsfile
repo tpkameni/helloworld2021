@@ -6,7 +6,7 @@ pipeline {
  
  }
   stages {
-    stage("Build" ) {
+    stage('Build' ) {
           steps {
           sh 'mvn clean'
           sh 'mvn install'
@@ -16,7 +16,7 @@ pipeline {
           }
           
           }
-    stage("Test" ) {
+    stage('Test' ) {
           steps {
           echo " test steps"
            sh 'mvn test'
@@ -25,7 +25,7 @@ pipeline {
           }
           
           }
-    stage("deploy" ) {
+    stage('deploy' ) {
           steps {
           echo " deploy steps"
           sleep 10
