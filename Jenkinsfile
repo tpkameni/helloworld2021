@@ -6,7 +6,7 @@ pipeline {
  
  }
  environment {
- registry = "tpkameni/devop-code
+ registry = "tpkameni/devop-code"
  registryCredential = 'DockeruserID' 
  
  
